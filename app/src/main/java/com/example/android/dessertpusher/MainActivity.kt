@@ -26,6 +26,7 @@ import androidx.core.app.ShareCompat
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.LifecycleObserver
 import com.example.android.dessertpusher.databinding.ActivityMainBinding
+import timber.log.Timber
 
 class MainActivity : AppCompatActivity(), LifecycleObserver {
 
@@ -145,5 +146,35 @@ class MainActivity : AppCompatActivity(), LifecycleObserver {
             R.id.shareMenuButton -> onShare()
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Timber.i("onStart running")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Timber.i("onResume running")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Timber.i("onPause running")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Timber.i("onStop running")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Timber.i("onDestroy running")
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        Timber.i("onRestart running")
     }
 }
